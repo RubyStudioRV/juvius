@@ -1,0 +1,25 @@
+<% title "Workproducts" %>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Workname</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Tehnology</th>
+  </tr>
+  <% for workproduct in @workproducts %>
+    <tr>
+      <td><%= workproduct.user_id %></td>
+      <td><%= workproduct.workname %></td>
+      <td><%= workproduct.worktype %></td>
+      <td><%= workproduct.description %></td>
+      <td><%= workproduct.tehnology %></td>
+      <td><%= link_to "Show", workproduct %></td>
+      <td><%= link_to "Edit", edit_workproduct_path(workproduct) %></td>
+      <td><%= link_to "Destroy", workproduct, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Workproduct", new_workproduct_path %></p>

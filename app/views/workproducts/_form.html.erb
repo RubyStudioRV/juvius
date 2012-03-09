@@ -1,0 +1,24 @@
+<%= form_for @workproduct do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.hidden_field :user_id, :value => current_user.nil? ? nil : current_user.id%>
+
+  <p>
+    <%= f.label :workname %><br />
+    <%= f.text_field :workname %>
+  </p>
+  <p>
+    <%= f.label :worktype %><br />
+    <%= f.text_field :worktype %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :tehnology %><br />
+    <%= f.text_field :tehnology %>
+  </p>
+  <p><%= f.submit %></p>
+  
+<% end %>

@@ -1,0 +1,31 @@
+
+<%if (@user == nil)%>
+  <% title 'No public ID found' %>
+<%else%>
+  <% title @user.username %>
+<%end%>
+
+<% debug @user_workproducts%>
+<% debug @user%>
+
+<% if @user.blank? or @user_workproducts.blank? %>
+    No Workproducts
+    
+<% else %>
+    <% debug @user_workproducts%>
+    
+    <% for workproduct in  @user_workproducts do %>
+    <p>
+      <strong>Workname:</strong>
+      <%= link_to workproduct.workname , workproduct_path(workproduct) %> <%= workproduct.worktype %> <%= workproduct.description %> 
+      <% if current_user == workproduct.user_id %>
+          <%= link_to "Edit", edit_workproduct_path(workproduct) %> |
+          <%= link_to "Destroy", workproduct, :confirm => 'Are you sure?', :method => :delete %> |
+      <% end %>
+    </p>
+    <% end %>
+<% end %>
+
+<p>
+
+</p>

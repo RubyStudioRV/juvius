@@ -1,0 +1,27 @@
+<% title "Workproduct" %>
+
+<p>
+  <strong>Workname:</strong>
+  <%= @workproduct.workname %>
+</p>
+<p>
+  <strong>Type:</strong>
+  <%= @workproduct.worktype %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @workproduct.description %>
+</p>
+<p>
+  <strong>Tehnology:</strong>
+  <%= @workproduct.tehnology %>
+</p>
+
+<p>
+
+  <% if !current_user.blank? and current_user.id == @workproduct.user_id %>
+      <%= link_to "Edit", edit_workproduct_path(@workproduct) %> |
+      <%= link_to "Destroy", @workproduct, :confirm => 'Are you sure?', :method => :delete %> |
+      <%#= link_to "View All", workproducts_path %>
+  <%end%>
+</p>

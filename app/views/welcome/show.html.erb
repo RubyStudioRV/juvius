@@ -1,0 +1,16 @@
+
+<div style="text-align:center">
+<p>
+   Show your work to the world
+</p>
+<p>
+  <% if current_user.nil? %>
+    <%= link_to "Sign in" , new_user_session_path %>    or     <%= link_to "Register" , new_user_registration_path %>
+  <%else%>
+    Wellcome to Juvius.
+  <%end%>
+  
+</p>
+</div>
+
+</p>
